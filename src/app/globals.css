@@ -1,21 +1,79 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f3f1ff;
+  --foreground: #212121;
+  --primary: #3a1bff;
+  --secondary: #ffffff;
+  --border: #eeeeee;
+  --card: #f2f2f2;
+  --muted: #757575;
+  --gradient-color-1: #043af9;
+  --gradient-color-2: #ff86f6;
+  --gradient-color-3: #ffd08d;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #00021c;
+    --foreground: #ffffff;
+    --primary: #3a1bff;
+    --secondary: #0d0f2b;
+    --border: #21255f;
+    --card: #575ca7;
+    --muted: #575ca7;
+    --gradient-color-1: #043af9;
+    --gradient-color-2: #ff86f6;
+    --gradient-color-3: #ffd08d;
+  }
+} */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-gradient-1: var(--gradient-color-1);
+  --color-gradient-2: var(--gradient-color-2);
+  --color-gradient-3: var(--gradient-color-3);
+  --font-poppins: var(--font-poppins);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+  }
+}
+
+@utility container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+
+  @variant sm {
+    padding-inline: 1rem;
+  }
+
+  @variant lg {
+    padding-inline: 2rem;
+  }
+
+  @variant xl {
+    padding-inline: 4rem;
+  }
+
+  @variant 2xl {
+    padding-inline: 5rem;
   }
 }
 
