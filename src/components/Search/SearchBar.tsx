@@ -59,24 +59,21 @@ const SearchBar = ({ triggerType, onClose }: SearchBarProps) => {
     <>
       {/* Overlay */}
       {isActive && triggerType !== "mobile" && (
-        <div
-          className="fixed inset-0 bg-black/30 z-40"
-        />
+        <div className="fixed inset-0 z-40 bg-black/30" />
       )}
 
       <div
         ref={searchContainerRef}
-        className={`relative z-50 mx-auto ${triggerType === "mobile"
-          ? "block"
-          : "hidden md:block"
-          }`}
+        className={`relative z-50 mx-auto ${
+          triggerType === "mobile" ? "block" : "hidden md:block"
+        }`}
       >
         <form
           onSubmit={(e) => e.preventDefault()}
           className="relative mx-auto flex items-center justify-center"
         >
           <div className="relative w-full">
-            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 transform text-muted" />
+            <FaSearch className="text-muted absolute top-1/2 left-3 -translate-y-1/2 transform" />
             <input
               ref={inputRef}
               type="text"
@@ -84,13 +81,13 @@ const SearchBar = ({ triggerType, onClose }: SearchBarProps) => {
               onFocus={() => setIsActive(true)}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={"Search Games"}
-              className="w-full rounded-full px-10 py-2 border border-border focus:border-none focus:outline-none focus:ring-2 focus:ring-primary"
+              className="border-border focus:ring-primary w-full rounded-full border px-10 py-2 focus:border-none focus:ring-2 focus:outline-none"
             />
             {isActive && (
               <button
                 type="button"
                 onClick={closeSearch}
-                className="absolute right-3 top-1/2 -translate-y-1/2 transform text-gray-500 hover:text-primary"
+                className="hover:text-primary absolute top-1/2 right-3 -translate-y-1/2 transform text-gray-500"
               >
                 <FaXmark />
               </button>

@@ -26,12 +26,5 @@
     "react-icons": "^5.5.0",
     "tailwindcss": "^4",
     "typescript": "^5"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": true,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "useTabs": false
   }
 }

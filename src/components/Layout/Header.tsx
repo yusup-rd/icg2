@@ -10,10 +10,12 @@ const Header = () => {
         </div>
         <div className="bg-card border-border rounded-full"></div>
         <div className="flex gap-3 text-nowrap">
-          <button className="from-gradient-1 via-gradient-2 to-gradient-3 rounded-lg bg-linear-to-r p-2 font-bold text-white hover:scale-105 duration-200 cursor-pointer">
+          <button className="from-gradient-1 via-gradient-2 to-gradient-3 cursor-pointer rounded-lg bg-linear-to-r p-2 font-bold text-white duration-200 hover:scale-105">
             Login / Register
           </button>
-          <button className="bg-card rounded-lg p-2 hover:scale-105 duration-200 cursor-pointer">EN</button>
+          <button className="bg-card cursor-pointer rounded-lg p-2 duration-200 hover:scale-105">
+            EN
+          </button>
         </div>
       </div>
     </header>
