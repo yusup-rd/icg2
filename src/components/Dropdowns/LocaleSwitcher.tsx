@@ -44,6 +44,7 @@ const LocaleSwitcher = () => {
           alt={`${locale} flag`}
           width={20}
           height={20}
+          priority
           className="size-6"
         />
       </button>
@@ -78,6 +79,7 @@ const LocaleSwitcher = () => {
                       alt={`${current} flag`}
                       width={20}
                       height={20}
+                      priority
                     />
 
                     {/* Locale Name */}

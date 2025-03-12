@@ -4,7 +4,7 @@ const RouletteLink = () => {
   return (
     <>
       <div className="border-border relative flex h-20 w-full cursor-pointer items-center justify-end overflow-hidden rounded-2xl border bg-linear-to-r from-[#E0E0E0] to-[#FFE5FF] p-8 duration-200 hover:scale-102">
-        <p className="z-10 bg-linear-to-r from-[#A100FF] to-[#FF48E4] bg-clip-text text-3xl font-extrabold text-transparent italic">
+        <p className="z-10 bg-linear-to-r from-[#A100FF] to-[#FF48E4] bg-clip-text pr-1 text-3xl font-extrabold text-transparent italic">
           Roulette
         </p>
         {/* Main Image */}
@@ -14,6 +14,7 @@ const RouletteLink = () => {
             alt="Roulette Main Image"
             width={100}
             height={100}
+            priority
             className="size-36"
           />
         </div>
@@ -25,6 +26,7 @@ const RouletteLink = () => {
             alt="Roulette Extra Image 1"
             width={100}
             height={100}
+            priority
             className="size-12"
           />
         </div>
@@ -36,6 +38,7 @@ const RouletteLink = () => {
             alt="Roulette Extra Image 2"
             width={100}
             height={100}
+            priority
             className="size-7"
           />
         </div>
@@ -47,6 +50,7 @@ const RouletteLink = () => {
             alt="Roulette Extra Image 3"
             width={100}
             height={100}
+            priority
             className="size-5"
           />
         </div>

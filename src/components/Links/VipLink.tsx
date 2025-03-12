@@ -4,7 +4,7 @@ const VipLink = () => {
   return (
     <>
       <div className="border-border relative flex h-20 w-full cursor-pointer items-center justify-end overflow-hidden rounded-2xl border bg-linear-to-r from-[#FFF9F1] to-[#C1AA8D] p-8 duration-200 hover:scale-102">
-        <p className="z-10 bg-linear-to-r from-[#814A13] to-[#FFA600] bg-clip-text text-3xl font-extrabold text-transparent italic">
+        <p className="z-10 bg-linear-to-r from-[#814A13] to-[#FFA600] bg-clip-text pr-1 text-3xl font-extrabold text-transparent italic">
           VIP Club
         </p>
         {/* Main Image */}
@@ -14,6 +14,7 @@ const VipLink = () => {
             alt="VIP Main Image"
             width={100}
             height={100}
+            priority
             className="size-24"
           />
         </div>
@@ -25,6 +26,7 @@ const VipLink = () => {
             alt="VIP Extra Image 1"
             width={100}
             height={100}
+            priority
             className="size-12"
           />
         </div>
@@ -36,6 +38,7 @@ const VipLink = () => {
             alt="VIP Extra Image 2"
             width={100}
             height={100}
+            priority
             className="size-7"
           />
         </div>

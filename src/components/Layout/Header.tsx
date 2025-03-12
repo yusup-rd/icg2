@@ -14,10 +14,12 @@ const Header = () => {
         </div>
         <div className="bg-card border-border rounded-full"></div>
         <div className="flex gap-3 text-nowrap">
-          <button className="from-gradient-1 via-gradient-2 to-gradient-3 cursor-pointer rounded-lg bg-linear-to-r p-2 font-bold text-white duration-200 hover:scale-105">
+          <button className="from-gradient-1 via-gradient-2 to-gradient-3 cursor-pointer rounded-full bg-linear-to-r p-2 font-bold text-white duration-200 hover:scale-105 sm:rounded-lg">
             Login / Register
           </button>
-          <LocaleSwitcher />
+          <span className="hidden md:block">
+            <LocaleSwitcher />
+          </span>
         </div>
       </div>
     </header>

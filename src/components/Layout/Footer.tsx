@@ -48,6 +48,7 @@ const Footer = () => {
               alt={bank.name + " Icon"}
               width={40}
               height={40}
+              priority={index === 0}
               className="h-10 w-10 rounded-md"
             />
           ))}

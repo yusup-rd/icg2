@@ -17,7 +17,7 @@ export const banks = [
   },
   {
     name: "HongLeong Bank",
-    icon: "/banks/hongLeong.svg",
+    icon: "/banks/hongleong.svg",
   },
   {
     name: "Alliance Bank",

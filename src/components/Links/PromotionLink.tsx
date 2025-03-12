@@ -4,7 +4,7 @@ const PromotionLink = () => {
   return (
     <>
       <div className="border-border relative flex h-20 w-full cursor-pointer items-center justify-end overflow-hidden rounded-2xl border bg-linear-to-r from-[#F9B6FF] via-[#FFFFFF] to-[#8BF3F4] p-8 duration-200 hover:scale-102">
-        <p className="z-10 bg-linear-to-r from-[#FF44D7] to-[#0E7DFD] bg-clip-text text-3xl font-extrabold text-transparent italic">
+        <p className="z-10 bg-linear-to-r from-[#FF44D7] to-[#0E7DFD] bg-clip-text pr-1 text-3xl font-extrabold text-transparent italic">
           Promotion
         </p>
         {/* Main Image */}
@@ -14,6 +14,7 @@ const PromotionLink = () => {
             alt="Promotion Main Image"
             width={100}
             height={100}
+            priority
             className="size-36"
           />
         </div>
@@ -25,6 +26,7 @@ const PromotionLink = () => {
             alt="Promotion Extra Image 1"
             width={100}
             height={100}
+            priority
             className="size-9"
           />
         </div>
@@ -36,6 +38,7 @@ const PromotionLink = () => {
             alt="Promotion Extra Image 2"
             width={100}
             height={100}
+            priority
             className="size-12"
           />
         </div>
@@ -47,6 +50,7 @@ const PromotionLink = () => {
             alt="Promotion Extra Image 3"
             width={100}
             height={100}
+            priority
             className="size-5"
           />
         </div>
