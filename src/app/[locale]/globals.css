@@ -13,7 +13,7 @@
   --gradient-color-3: #ffd08d;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #00021c;
     --foreground: #ffffff;
@@ -26,7 +26,7 @@
     --gradient-color-2: #ff86f6;
     --gradient-color-3: #ffd08d;
   }
-}
+} */
 
 @theme inline {
   --color-background: var(--background);
