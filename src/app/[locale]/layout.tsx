@@ -5,6 +5,7 @@ import Sidebar from "@/components/Layout/Sidebar";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import Providers from "./providers";
+import MobileSidebar from "@/components/Layout/MobileSidebar";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -28,7 +29,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <div className="flex">
-            <div className="m-4">
+            <div className="m-4 hidden md:block">
               <Sidebar />
             </div>
             <div className="m-4 flex-1">{children}</div>
@@ -36,6 +37,8 @@ export default function RootLayout({
           <div className="mx-4 mt-4 mb-18 md:mb-4">
             <Footer />
           </div>
+
+          <MobileSidebar />
         </Providers>
       </body>
     </html>

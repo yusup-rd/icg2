@@ -31,8 +31,10 @@ const HomePage = () => {
               <Image
                 src="/banners/mainBanner.png"
                 alt="Main Banner Image"
-                width={300}
-                height={300}
+                width={0}
+                height={0}
+                sizes="100vw"
+                priority
                 className="border-border h-full w-full cursor-pointer rounded-2xl border object-cover"
               />
             </div>
