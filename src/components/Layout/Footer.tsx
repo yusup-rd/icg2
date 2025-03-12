@@ -26,21 +26,21 @@ const Footer = () => {
 
       {/* Links and bank icons */}
       <div className="flex flex-1 flex-col gap-5">
-        <div className="divide-border text-muted flex justify-end divide-x text-nowrap">
-          <span className="hover:text-primary cursor-pointer pr-4 duration-200">
+        <div className="divide-border text-muted flex flex-col justify-end space-y-5 text-nowrap md:flex-row md:space-y-0 md:divide-x">
+          <span className="hover:text-primary cursor-pointer duration-200 md:pr-4">
             FAQ
           </span>
-          <span className="hover:text-primary cursor-pointer px-4 duration-200">
+          <span className="hover:text-primary cursor-pointer duration-200 md:px-4">
             About Us
           </span>
-          <span className="hover:text-primary cursor-pointer px-4 duration-200">
+          <span className="hover:text-primary cursor-pointer duration-200 md:px-4">
             General
           </span>
-          <span className="hover:text-primary cursor-pointer pl-4 duration-200">
+          <span className="hover:text-primary cursor-pointer duration-200 md:pl-4">
             Terms & Conditions
           </span>
         </div>
-        <div className="flex flex-wrap justify-end gap-1.5">
+        <div className="flex flex-wrap gap-1.5 md:justify-end">
           {banks.map((bank, index) => (
             <Image
               key={index}

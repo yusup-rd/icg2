@@ -1,3 +1,4 @@
+import { Link } from "@/i18n/routing";
 import LocaleSwitcher from "../Dropdowns/LocaleSwitcher";
 import SearchBar from "../Search/SearchBar";
 
@@ -5,7 +6,9 @@ const Header = () => {
   return (
     <header className="bg-secondary border-border sticky top-0 z-30 flex h-14 w-full border-b">
       <div className="container flex items-center justify-between gap-12">
-        <div className="text-2xl font-bold">LOGO</div>
+        <Link href="/" className="text-2xl font-bold">
+          LOGO
+        </Link>
         <div className="flex-1">
           <SearchBar triggerType="header" />
         </div>
