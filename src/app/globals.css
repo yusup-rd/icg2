@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --background: #f3f1ff;
@@ -18,9 +18,9 @@
     --background: #00021c;
     --foreground: #ffffff;
     --primary: #3a1bff;
-    --secondary: #0d0f2b;
+    --secondary: #121426;
     --border: #21255f;
-    --card: #575ca7;
+    --card: #161948;
     --muted: #575ca7;
     --gradient-color-1: #043af9;
     --gradient-color-2: #ff86f6;

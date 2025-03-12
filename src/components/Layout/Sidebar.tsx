@@ -36,7 +36,7 @@ const Sidebar = () => {
           {categories.map((category, index) => (
             <div key={index}>
               <button
-                className="hover:bg-primary/10 flex w-full cursor-pointer items-center gap-2.5 rounded-lg px-3 py-2 duration-200"
+                className="hover:bg-primary/10 flex w-full cursor-pointer items-center gap-2.5 rounded-lg px-3 py-2 text-nowrap duration-200"
                 onClick={() => toggleSubmenu(category.name)}
               >
                 <Image

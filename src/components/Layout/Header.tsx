@@ -1,4 +1,5 @@
 import SearchBar from "../Search/SearchBar";
+import { MdLightMode } from "react-icons/md";
 
 const Header = () => {
   return (
@@ -15,6 +16,9 @@ const Header = () => {
           </button>
           <button className="bg-card cursor-pointer rounded-lg p-2 duration-200 hover:scale-105">
             EN
+          </button>
+          <button className="bg-card cursor-pointer rounded-lg p-2 duration-200 hover:scale-105">
+            <MdLightMode className="size-5" />
           </button>
         </div>
       </div>
