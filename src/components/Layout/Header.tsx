@@ -1,5 +1,5 @@
+import LocaleSwitcher from "../Dropdowns/LocaleSwitcher";
 import SearchBar from "../Search/SearchBar";
-import { MdLightMode } from "react-icons/md";
 
 const Header = () => {
   return (
@@ -14,12 +14,7 @@ const Header = () => {
           <button className="from-gradient-1 via-gradient-2 to-gradient-3 cursor-pointer rounded-lg bg-linear-to-r p-2 font-bold text-white duration-200 hover:scale-105">
             Login / Register
           </button>
-          <button className="bg-card cursor-pointer rounded-lg p-2 duration-200 hover:scale-105">
-            EN
-          </button>
-          <button className="bg-card cursor-pointer rounded-lg p-2 duration-200 hover:scale-105">
-            <MdLightMode className="size-5" />
-          </button>
+          <LocaleSwitcher />
         </div>
       </div>
     </header>

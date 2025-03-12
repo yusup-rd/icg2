@@ -5,7 +5,7 @@ import { categories } from "@/data/categoriesData";
 import Image from "next/image";
 import { LuPencilLine } from "react-icons/lu";
 import { TbLogout } from "react-icons/tb";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 const Sidebar = () => {
   const [openCategory, setOpenCategory] = useState<string | null>(null);

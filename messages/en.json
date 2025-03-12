@@ -1,0 +1,11 @@
+{
+  "LocaleSwitcher": {
+    "label": "Language",
+    "locale": "{locale, select, en {English} zh {简体中文} other {Unknown}}"
+  },
+  "NotFoundPage": {
+    "message": "404 - Page Not Found",
+    "description": "Sorry, the page you're looking for doesn't exist.",
+    "link": "Go Back Home"
+  }
+}

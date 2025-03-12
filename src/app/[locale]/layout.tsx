@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/Layout/Sidebar";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import Providers from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,16 +37,18 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <div className="flex">
-          <div className="m-4">
-            <Sidebar />
+        <Providers>
+          <Header />
+          <div className="flex">
+            <div className="m-4">
+              <Sidebar />
+            </div>
+            <div className="m-4 flex-1">{children}</div>
           </div>
-          <div className="m-4 flex-1">{children}</div>
-        </div>
-        <div className="m-4">
-          <Footer />
-        </div>
+          <div className="m-4">
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
