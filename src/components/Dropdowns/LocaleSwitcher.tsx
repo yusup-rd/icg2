@@ -8,13 +8,20 @@ import { useParams } from "next/navigation";
 import flags from "@/utils/flagsUtil";
 import Image from "next/image";
 
-const LocaleSwitcher = () => {
+interface LocaleSwitcherProps {
+  isDropdownOpen: boolean;
+  toggleDropdown: () => void;
+}
+
+const LocaleSwitcher = ({
+  isDropdownOpen,
+  toggleDropdown,
+}: LocaleSwitcherProps) => {
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [pendingLocale, setPendingLocale] = useState<string | null>(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const pathname = usePathname();
   const params = useParams();
 
@@ -24,12 +31,8 @@ const LocaleSwitcher = () => {
       // @ts-expect-error to suppress the TypeScript error in the router.replace() method
       router.replace({ pathname, params }, { locale: nextLocale });
       setPendingLocale(null);
-      setIsDropdownOpen(false);
+      toggleDropdown();
     });
-  }
-
-  function toggleDropdown() {
-    setIsDropdownOpen((prev) => !prev);
   }
 
   return (
@@ -51,8 +54,8 @@ const LocaleSwitcher = () => {
 
       {/* Dropdown Menu */}
       {isDropdownOpen && (
-        <div className="bg-secondary border-border absolute right-0 mt-3 w-max rounded-lg border shadow-md">
-          <div className="bg-secondary w-full rounded py-1">
+        <div className="bg-card border-stroke absolute right-0 mt-3 w-max rounded-lg border shadow-md">
+          <div className="w-full rounded py-2">
             {routing.locales.map((current) => (
               <button
                 key={current}
@@ -65,10 +68,10 @@ const LocaleSwitcher = () => {
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
                     {/* Radiobutton element */}
-                    <div className="bg-border relative flex size-4 shrink-0 items-center justify-center rounded-full">
+                    <div className="bg-primary/30 relative flex size-4 shrink-0 items-center justify-center rounded-full">
                       <div
                         className={`size-2 rounded-full transition ${
-                          locale === current ? "bg-primary" : ""
+                          locale === current ? "bg-white" : ""
                         }`}
                       />
                     </div>

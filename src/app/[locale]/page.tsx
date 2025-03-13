@@ -19,9 +19,9 @@ const HomePage = () => {
       </div>
 
       {/* Fast Links Section */}
-      <div className="flex overflow-auto pb-3">
+      <div className="flex pb-3">
         <div className="w-0 flex-1">
-          <div className="flex flex-col gap-3 p-3 lg:flex-row">
+          <div className="flex flex-col gap-3 lg:flex-row">
             <div className="flex min-w-80 flex-1/3 flex-col justify-between gap-3">
               <PromotionLink />
               <VipLink />
@@ -35,7 +35,7 @@ const HomePage = () => {
                 height={0}
                 sizes="100vw"
                 priority
-                className="border-border h-full w-full cursor-pointer rounded-2xl border object-cover"
+                className="border-stroke h-full w-full cursor-pointer rounded-2xl border object-cover"
               />
             </div>
           </div>

@@ -15,8 +15,8 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="bg-secondary border-border sticky top-[72px] h-[calc(100vh-88px)] w-60 rounded-2xl border p-4">
-      <div className="divide-border flex h-full flex-col gap-5 divide-y">
+    <div className="bg-secondary border-stroke sticky top-[72px] h-[calc(100vh-88px)] w-60 rounded-2xl border p-4">
+      <div className="divide-stroke flex h-full flex-col gap-5 divide-y">
         <div className="flex items-center justify-between gap-3 pb-4">
           <div className="flex items-center gap-3">
             <Image
@@ -24,7 +24,7 @@ const Sidebar = () => {
               alt="Profile Image"
               width={48}
               height={48}
-              className="border-border h-12 w-12 rounded-full border"
+              className="border-stroke h-12 w-12 rounded-full border"
             />
             <h2>John Doe</h2>
           </div>

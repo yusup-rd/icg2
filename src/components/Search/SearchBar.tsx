@@ -81,7 +81,7 @@ const SearchBar = ({ triggerType, onClose }: SearchBarProps) => {
               onFocus={() => setIsActive(true)}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={"Search Games"}
-              className="border-border focus:ring-primary w-full rounded-full border px-10 py-2 focus:border-none focus:ring-2 focus:outline-none"
+              className="border-stroke focus:ring-primary w-full rounded-full border px-10 py-2 focus:border-none focus:ring-2 focus:outline-none"
             />
             {isActive && (
               <button

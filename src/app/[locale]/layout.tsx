@@ -29,7 +29,7 @@ export default async function RootLayout({
   const { locale } = await params;
 
   return (
-    <html lang={locale} className="h-full">
+    <html lang={locale} className="h-full" suppressHydrationWarning>
       <body className={`${poppins.variable} h-full antialiased`}>
         <Providers>
           <div className="flex h-full">

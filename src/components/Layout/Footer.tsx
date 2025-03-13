@@ -26,7 +26,7 @@ const Footer = () => {
 
       {/* Links and bank icons */}
       <div className="flex flex-1 flex-col gap-5">
-        <div className="divide-border text-muted flex flex-col justify-end space-y-5 text-nowrap md:flex-row md:space-y-0 md:divide-x">
+        <div className="divide-stroke text-muted flex flex-col justify-end space-y-5 text-nowrap md:flex-row md:space-y-0 md:divide-x">
           <span className="hover:text-primary cursor-pointer duration-200 md:pr-4">
             FAQ
           </span>
