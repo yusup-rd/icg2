@@ -1,9 +1,10 @@
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 
 const PromotionLink = () => {
   return (
-    <>
-      <div className="border-stroke relative flex h-24 w-full min-w-80 cursor-pointer items-center justify-end overflow-hidden rounded-2xl border bg-linear-to-r from-[#F9B6FF] via-[#FFFFFF] to-[#8BF3F4] p-8 duration-200 hover:scale-102">
+    <Link href="/promotion">
+      <div className="border-stroke relative flex h-24 w-full min-w-80 cursor-pointer items-center justify-end overflow-hidden rounded-2xl border bg-linear-to-r from-[#F9B6FF] via-[#FFFFFF] to-[#8BF3F4] p-8 duration-200 hover:-translate-y-1">
         <p className="z-10 bg-linear-to-r from-[#FF44D7] to-[#0E7DFD] bg-clip-text pr-1 text-3xl font-extrabold text-transparent italic">
           Promotion
         </p>
@@ -55,7 +56,7 @@ const PromotionLink = () => {
           />
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 

@@ -1,9 +1,10 @@
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 
 const VipLink = () => {
   return (
-    <>
-      <div className="border-stroke relative flex h-24 w-full min-w-80 cursor-pointer items-center justify-end overflow-hidden rounded-2xl border bg-linear-to-r from-[#FFF9F1] to-[#C1AA8D] p-8 duration-200 hover:scale-102">
+    <Link href="/vip">
+      <div className="border-stroke relative flex h-24 w-full min-w-80 cursor-pointer items-center justify-end overflow-hidden rounded-2xl border bg-linear-to-r from-[#FFF9F1] to-[#C1AA8D] p-8 duration-200 hover:-translate-y-1">
         <p className="z-10 bg-linear-to-r from-[#814A13] to-[#FFA600] bg-clip-text pr-1 text-3xl font-extrabold text-transparent italic">
           VIP Club
         </p>
@@ -43,7 +44,7 @@ const VipLink = () => {
           />
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 

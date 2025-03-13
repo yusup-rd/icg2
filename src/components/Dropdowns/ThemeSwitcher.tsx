@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { TbDeviceDesktopFilled } from "react-icons/tb";
+import ThemeSwitcherSkeleton from "../Skeleton/ThemeSwitcherSkeleton";
 
 // Props interface for ThemeSwitcher
 interface ThemeSwitcherProps {
@@ -22,8 +23,7 @@ export default function ThemeSwitcher({
     setMounted(true);
   }, []);
 
-  if (!mounted)
-    return <div className="bg-card size-10 animate-pulse rounded-lg"></div>;
+  if (!mounted) return <ThemeSwitcherSkeleton />;
 
   return (
     <div className="relative w-full text-nowrap">

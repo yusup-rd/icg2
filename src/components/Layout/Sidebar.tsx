@@ -15,7 +15,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="bg-secondary border-stroke sticky top-[72px] h-[calc(100vh-88px)] w-60 rounded-2xl border p-4">
+    <div className="bg-secondary border-stroke sticky top-4 h-[calc(100vh-88px)] w-60 rounded-2xl border p-4">
       <div className="divide-stroke flex h-full flex-col gap-5 divide-y">
         <div className="flex items-center justify-between gap-3 pb-4">
           <div className="flex items-center gap-3">
