@@ -1,7 +1,7 @@
 const FastLinksSkeleton = () => {
   return (
     <div className="flex">
-      <div className="w-0 flex-1 overflow-hidden">
+      <div className="w-0 flex-1 overflow-hidden py-3">
         <div className="w-full animate-pulse rounded-2xl">
           <div className="flex gap-3 md:h-80">
             {/* Links */}
