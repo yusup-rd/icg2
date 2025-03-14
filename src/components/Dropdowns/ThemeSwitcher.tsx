@@ -6,7 +6,6 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { TbDeviceDesktopFilled } from "react-icons/tb";
 import ThemeSwitcherSkeleton from "../Skeleton/ThemeSwitcherSkeleton";
 
-// Props interface for ThemeSwitcher
 interface ThemeSwitcherProps {
   isDropdownOpen: boolean;
   toggleDropdown: () => void;
@@ -35,7 +34,7 @@ export default function ThemeSwitcher({
       {/* Main button */}
       <button
         onClick={toggleDropdown}
-        className="bg-card cursor-pointer rounded-lg p-2 duration-200 hover:scale-105"
+        className="bg-card cursor-pointer rounded-full p-2 duration-200 hover:scale-105 md:rounded-lg"
       >
         {theme === "light" && <MdLightMode className="size-6" />}
         {theme === "dark" && <MdDarkMode className="size-6" />}

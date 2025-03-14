@@ -40,7 +40,7 @@ const LocaleSwitcher = ({
       {/* Main button */}
       <button
         onClick={toggleDropdown}
-        className="bg-card cursor-pointer rounded-lg p-2 duration-200 hover:scale-105"
+        className="bg-card cursor-pointer rounded-full p-2 duration-200 hover:scale-105 md:rounded-lg"
       >
         <Image
           src={flags[locale] || flags.en}
