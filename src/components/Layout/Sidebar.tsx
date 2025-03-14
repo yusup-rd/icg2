@@ -6,25 +6,40 @@ import Image from "next/image";
 import { LuPencilLine } from "react-icons/lu";
 import { TbLogout } from "react-icons/tb";
 import { Link } from "@/i18n/routing";
+import CircleSkeleton from "../Skeleton/CircleSkeleton";
 
 const Sidebar = () => {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [imageLoaded, setImageLoaded] = useState<{ [key: string]: boolean }>(
+    {},
+  );
 
   const toggleSubmenu = (categoryName: string) => {
     setOpenCategory((prev) => (prev === categoryName ? null : categoryName));
   };
 
+  const handleImageLoad = (key: string) => {
+    setImageLoaded((prev) => ({ ...prev, [key]: true }));
+  };
+
   return (
     <div className="bg-secondary border-stroke sticky top-4 h-[calc(100vh-88px)] w-60 rounded-2xl border p-4">
       <div className="divide-stroke flex h-full flex-col gap-5 divide-y">
+        {/* Profile */}
         <div className="flex items-center justify-between gap-3 pb-4">
           <div className="flex items-center gap-3">
+            {!imageLoaded["profile"] && <CircleSkeleton size={12} />}
             <Image
               src="/profile.png"
               alt="Profile Image"
-              width={48}
-              height={48}
-              className="border-stroke h-12 w-12 rounded-full border"
+              width={0}
+              height={0}
+              sizes="100vw"
+              priority
+              className={`border-stroke size-12 shrink-0 rounded-full border object-cover ${
+                imageLoaded["profile"] ? "block" : "hidden"
+              }`}
+              onLoad={() => handleImageLoad("profile")}
             />
             <h2>John Doe</h2>
           </div>
@@ -32,19 +47,27 @@ const Sidebar = () => {
             <LuPencilLine className="size-5" />
           </div>
         </div>
+
+        {/* Category Links */}
         <div className="flex flex-1 flex-col gap-5 overflow-y-auto pr-2 pb-4">
+          {/* Categories Menu */}
           {categories.map((category, index) => (
             <div key={index}>
               <button
                 className="hover:bg-primary/10 flex w-full cursor-pointer items-center gap-2.5 rounded-lg px-3 py-2 text-nowrap duration-200"
                 onClick={() => toggleSubmenu(category.name)}
               >
+                {!imageLoaded[`category-${index}`] && (
+                  <CircleSkeleton size={9} />
+                )}
                 <Image
                   src={category.icon}
                   alt={`Category ${category.name}`}
                   width={35}
                   height={35}
-                  className="h-9 w-9"
+                  priority
+                  className={`size-9 shrink-0 ${imageLoaded[`category-${index}`] ? "block" : "hidden"}`}
+                  onLoad={() => handleImageLoad(`category-${index}`)}
                 />
                 <p>{category.name}</p>
               </button>
@@ -56,16 +79,23 @@ const Sidebar = () => {
                     <Link
                       href="#"
                       key={idx}
-                      className="hover:bg-primary/10 flex cursor-pointer items-center gap-2 truncate rounded-lg px-3 py-2 duration-200"
+                      className="hover:bg-primary/10 flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 duration-200"
                     >
+                      {!imageLoaded[`game-${idx}`] && (
+                        <CircleSkeleton size={7} />
+                      )}
                       <Image
                         src={game.image}
                         alt={game.name}
                         width={30}
                         height={30}
-                        className="h-7 w-7"
+                        priority
+                        className={`size-7 shrink-0 ${
+                          imageLoaded[`game-${idx}`] ? "block" : "hidden"
+                        }`}
+                        onLoad={() => handleImageLoad(`game-${idx}`)}
                       />
-                      <p>{game.name}</p>
+                      <p className="truncate">{game.name}</p>
                     </Link>
                   ))}
                 </div>
@@ -73,6 +103,8 @@ const Sidebar = () => {
             </div>
           ))}
         </div>
+
+        {/* Logout Button */}
         <div className="hover:bg-primary/10 flex cursor-pointer items-center justify-between gap-3 rounded-lg px-3 py-2 text-xl font-medium duration-200">
           <p>Logout</p>
           <TbLogout className="text-primary size-7" />

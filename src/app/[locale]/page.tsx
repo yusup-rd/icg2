@@ -1,10 +1,12 @@
+import Image from "next/image";
 import PromotionLink from "@/components/Links/PromotionLink";
 import RouletteLink from "@/components/Links/RouletteLink";
 import VipLink from "@/components/Links/VipLink";
 import GamesSwiper from "@/components/Swiper/GamesSwiper";
-import { allCategories, popularGames } from "@/data/mock/mockGamesData";
-import Image from "next/image";
 import { IoVolumeHigh } from "react-icons/io5";
+import { HiSquares2X2 } from "react-icons/hi2";
+import { allCategories, popularGames } from "@/data/mock/mockGamesData";
+import { categories } from "@/data/categoriesData";
 
 const HomePage = () => {
   return (
@@ -60,7 +62,37 @@ const HomePage = () => {
       </div>
 
       {/* Categories Section */}
-      {/* TODO: --Implement here-- */}
+      <div className="flex flex-col gap-5">
+        {/* Title */}
+        <div className="flex items-center gap-3">
+          <h3 className="text-2xl font-bold">Categories</h3>
+          <div className="size-7">
+            <HiSquares2X2 className="size-full" />
+          </div>
+        </div>
+
+        {/* Categories */}
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {categories.map((category, index) => (
+            <div
+              key={index}
+              className="bg-secondary border-stroke flex cursor-pointer flex-col items-center gap-5 rounded-2xl border px-7 py-3.5 duration-200 hover:scale-105 md:flex-row"
+            >
+              <Image
+                src={category.icon}
+                alt={category.name}
+                width={68}
+                height={68}
+                priority
+                className="size-11 md:size-16"
+              />
+              <span className="truncate font-bold text-nowrap md:text-2xl">
+                {category.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Games List Section */}
       <div className="flex">
