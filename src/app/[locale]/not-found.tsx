@@ -7,7 +7,7 @@ export default function NotFoundPage() {
 
   return (
     <section>
-      <div className="container flex h-[calc(100vh-88px)] w-full flex-col items-center justify-center text-center md:mb-0">
+      <div className="container flex h-[calc(100vh-144px)] w-full flex-col items-center justify-center text-center md:mb-0 md:h-[calc(100vh-88px)]">
         <FiAlertTriangle className="text-primary size-28" />
         <h1 className="text-primary text-4xl font-bold">{t("message")}</h1>
         <p className="mt-4 text-lg text-gray-700">{t("description")}</p>

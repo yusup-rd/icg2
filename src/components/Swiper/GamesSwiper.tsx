@@ -61,7 +61,10 @@ const GamesSwiper: React.FC<GamesSwiperProps> = ({
           {!isSwiperReady
             ? [...Array(20)].map((_, index) => (
                 <SwiperSlide key={index} className="flex-1 pt-2">
-                  <GameCardSkeleton showCategory showOnline />
+                  <GameCardSkeleton
+                    showCategory={showCategory}
+                    showOnline={showOnline}
+                  />
                 </SwiperSlide>
               ))
             : category.games.map((game) => (
