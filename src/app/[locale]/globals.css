@@ -7,6 +7,7 @@
   --secondary: #ffffff;
   --stroke: #eeeeee;
   --card: #f2f2f2;
+  --skeleton: #ececec;
   --muted: #757575;
   --gradient-color-1: #043af9;
   --gradient-color-2: #ff86f6;
@@ -20,6 +21,7 @@
   --secondary: #121426;
   --stroke: #21255f;
   --card: #161948;
+  --skeleton: #161948;
   --muted: #575ca7;
   --gradient-color-1: #043af9;
   --gradient-color-2: #ff86f6;
@@ -33,6 +35,7 @@
   --color-secondary: var(--secondary);
   --color-stroke: var(--stroke);
   --color-card: var(--card);
+  --color-skeleton: var(--skeleton);
   --color-muted: var(--muted);
   --color-gradient-1: var(--gradient-color-1);
   --color-gradient-2: var(--gradient-color-2);

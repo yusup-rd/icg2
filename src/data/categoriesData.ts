@@ -2,6 +2,7 @@ export const categories = [
   {
     icon: "/categories/sports.svg",
     name: "Sports",
+    href: "/sports",
     games: [
       {
         image: "/games/queenOfBounty.svg",
@@ -28,6 +29,7 @@ export const categories = [
   {
     icon: "/categories/casino.svg",
     name: "Casino",
+    href: "/casino",
     games: [
       {
         image: "/games/queenOfBounty.svg",
@@ -54,6 +56,7 @@ export const categories = [
   {
     icon: "/categories/slot.svg",
     name: "Slot",
+    href: "/slot",
     games: [
       {
         image: "/games/queenOfBounty.svg",
@@ -80,6 +83,7 @@ export const categories = [
   {
     icon: "/categories/esports.svg",
     name: "E-Sports",
+    href: "/esports",
     games: [
       {
         image: "/games/queenOfBounty.svg",
@@ -106,6 +110,7 @@ export const categories = [
   {
     icon: "/categories/fishing.svg",
     name: "Fishing",
+    href: "/fishing",
     games: [
       {
         image: "/games/queenOfBounty.svg",
@@ -132,6 +137,7 @@ export const categories = [
   {
     icon: "/categories/arcade.svg",
     name: "Arcade",
+    href: "/arcade",
     games: [
       {
         image: "/games/queenOfBounty.svg",
@@ -158,6 +164,7 @@ export const categories = [
   {
     icon: "/categories/cockfight.svg",
     name: "Cockfight",
+    href: "/cockfight",
     games: [
       {
         image: "/games/queenOfBounty.svg",
@@ -184,6 +191,7 @@ export const categories = [
   {
     icon: "/categories/lottery.svg",
     name: "Lottery",
+    href: "/lottery",
     games: [
       {
         image: "/games/queenOfBounty.svg",

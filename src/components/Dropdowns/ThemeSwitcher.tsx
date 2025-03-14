@@ -25,6 +25,11 @@ export default function ThemeSwitcher({
 
   if (!mounted) return <ThemeSwitcherSkeleton />;
 
+  const handleThemeChange = (newTheme: string) => {
+    setTheme(newTheme);
+    toggleDropdown();
+  };
+
   return (
     <div className="relative w-full text-nowrap">
       {/* Main button */}
@@ -43,12 +48,12 @@ export default function ThemeSwitcher({
           <div className="flex items-center gap-2">
             {/* Light theme */}
             <button
-              onClick={() => setTheme("light")}
               className={`${
                 theme === "light"
                   ? "hover:bg-primary/80 bg-primary/20"
                   : "hover:bg-primary/80 bg-transparent"
               } block w-full cursor-pointer rounded-full p-2 text-left duration-200 hover:text-white`}
+              onClick={() => handleThemeChange("light")}
             >
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center justify-center">
@@ -59,12 +64,12 @@ export default function ThemeSwitcher({
 
             {/* Dark theme */}
             <button
-              onClick={() => setTheme("dark")}
               className={`${
                 theme === "dark"
                   ? "hover:bg-primary/80 bg-primary/20"
                   : "hover:bg-primary/80 bg-transparent"
               } block w-full cursor-pointer rounded-full p-2 text-left duration-200 hover:text-white`}
+              onClick={() => handleThemeChange("dark")}
             >
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center justify-center">
@@ -75,12 +80,12 @@ export default function ThemeSwitcher({
 
             {/* System theme */}
             <button
-              onClick={() => setTheme("system")}
               className={`${
                 theme === "system"
                   ? "hover:bg-primary/80 bg-primary/20"
                   : "hover:bg-primary/80 bg-transparent"
               } block w-full cursor-pointer rounded-full p-2 text-left duration-200 hover:text-white`}
+              onClick={() => handleThemeChange("system")}
             >
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center justify-center">

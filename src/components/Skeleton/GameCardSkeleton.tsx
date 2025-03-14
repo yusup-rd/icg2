@@ -9,7 +9,7 @@ const GameCardSkeleton = ({
 }: GameCardSkeletonProps) => {
   return (
     <div className="px-1">
-      <div className="bg-card relative h-72 w-56 animate-pulse rounded-2xl">
+      <div className="bg-skeleton relative h-72 w-56 animate-pulse rounded-2xl">
         {showCategory && (
           <div className="absolute top-4 left-4 h-8 w-16 rounded-2xl bg-white/10"></div>
         )}
