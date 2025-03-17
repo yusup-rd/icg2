@@ -38,7 +38,7 @@ const GameCard: React.FC<GameCardProps> = ({
           width={230}
           height={300}
           priority={true}
-          className="border-stroke h-56 w-full rounded-2xl border object-contain md:h-72"
+          className="border-stroke rounded-2xl border object-contain"
         />
 
         {/* Overlay */}
@@ -49,7 +49,7 @@ const GameCard: React.FC<GameCardProps> = ({
 
       {/* Online Players */}
       {showOnline && (
-        <div className="absolute bottom-4 left-4 max-w-32 md:max-w-44">
+        <div className="absolute bottom-4 left-4 max-w-44">
           <div className="flex items-center gap-2">
             <div className="size-2 rounded-full bg-green-500">
               <div className="size-2 animate-ping rounded-full bg-green-500"></div>
