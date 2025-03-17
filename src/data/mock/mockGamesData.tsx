@@ -1,9 +1,10 @@
 import { FaFire } from "react-icons/fa6";
 import { JSX } from "react";
 
-interface Game {
+export interface Game {
   id: string;
   name: string;
+  href: string;
   category: string;
   image: string;
   onlinePlayers: number;
@@ -23,6 +24,7 @@ const generateGames = (category: string, count: number): Game[] =>
     return {
       id: gameId,
       name: gameName,
+      href: `/game/${gameId}`,
       category,
       image: `https://placehold.co/600x800.png?text=${encodeURIComponent(gameName)}&font=montserrat`,
       onlinePlayers: Math.floor(Math.random() * 5000),

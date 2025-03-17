@@ -14,7 +14,7 @@ const MobileSidebar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-secondary border-stroke fixed right-0 bottom-0 left-0 z-20 flex h-14 justify-around border-t md:hidden">
+    <nav className="bg-secondary border-stroke sticky right-0 bottom-0 left-0 z-20 flex h-14 justify-around border-t md:hidden">
       {/* Home */}
       <Link
         href="/"

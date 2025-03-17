@@ -2,61 +2,72 @@
 
 import { useRouter } from "@/i18n/routing";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 interface GameCardProps {
   id: string;
   name: string;
+  category: string;
   image: string;
-  category: "casino" | "sports";
   onlinePlayers?: number;
   showOnline?: boolean;
+  showCategory?: boolean;
+  noOverlay?: boolean;
 }
 
 const GameCard: React.FC<GameCardProps> = ({
   id,
   name,
-  image,
   category,
+  image,
   onlinePlayers,
   showOnline = false,
+  showCategory = false,
+  noOverlay = false,
 }) => {
   const router = useRouter();
-
-  const handleClick = () => {
-    router.push(`/${category}/game/${id}`);
-  };
-
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null;
-  }
-
   return (
-    <div className="w-full cursor-pointer" onClick={handleClick}>
-      <Image
-        src={image}
-        alt={name}
-        width={150}
-        height={200}
-        priority={true}
-        className="rounded object-contain duration-300 ease-in-out hover:-translate-y-2 hover:shadow-md"
-      />
-      {showOnline && onlinePlayers !== undefined && (
-        <p className="mt-1 mb-3 flex items-center">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-600"></span>
-          </span>
-          <span className="text-foreground ml-1 text-xs opacity-60 md:ml-2 md:text-sm">
-            {onlinePlayers.toLocaleString()} people playing
-          </span>
-        </p>
+    <div
+      className="relative rounded-2xl duration-200 ease-in-out hover:-translate-y-2 hover:shadow-md"
+      onClick={() => router.replace(`/game/${id}`)}
+    >
+      <div className="relative w-full cursor-pointer">
+        {/* Game Image */}
+        <Image
+          src={image}
+          alt={name}
+          width={230}
+          height={300}
+          priority={true}
+          className="border-stroke h-56 w-full rounded-2xl border object-contain md:h-72"
+        />
+
+        {/* Overlay */}
+        {!noOverlay && (
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent from-40% to-black to-90%"></div>
+        )}
+      </div>
+
+      {/* Online Players */}
+      {showOnline && (
+        <div className="absolute bottom-4 left-4 max-w-32 md:max-w-44">
+          <div className="flex items-center gap-2">
+            <div className="size-2 rounded-full bg-green-500">
+              <div className="size-2 animate-ping rounded-full bg-green-500"></div>
+            </div>
+            <p className="truncate text-sm text-white">
+              {onlinePlayers?.toLocaleString()} people playing
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Category */}
+      {showCategory && (
+        <div className="absolute top-4 left-4">
+          <div className="rounded-2xl border border-white/20 bg-white/20 px-2.5 py-1.5 text-sm font-light text-white backdrop-blur-md">
+            {category}
+          </div>
+        </div>
       )}
     </div>
   );

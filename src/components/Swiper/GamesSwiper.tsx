@@ -3,11 +3,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css";
-import Image from "next/image";
 import { useState } from "react";
 import GameCardSkeleton from "../Skeleton/GameCardSkeleton";
-import { Link, useRouter } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 import { Category } from "@/data/mock/mockGamesData";
+import GameCard from "../Card/GameCard";
 
 interface GamesSwiperProps {
   category: Category;
@@ -22,12 +22,6 @@ const GamesSwiper: React.FC<GamesSwiperProps> = ({
   showCategory = false,
   showMore = true,
 }) => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push(`/category/game`);
-  };
-
   const [isSwiperReady, setIsSwiperReady] = useState(false);
 
   return (
@@ -39,7 +33,7 @@ const GamesSwiper: React.FC<GamesSwiperProps> = ({
         </div>
         {showMore && (
           <Link
-            href={`/${category.href}`}
+            href={`/category/${category.href}`}
             className="bg-secondary text-primary cursor-pointer rounded-xl px-4 py-3 text-sm font-bold duration-200 hover:scale-105"
           >
             View All
@@ -68,50 +62,18 @@ const GamesSwiper: React.FC<GamesSwiperProps> = ({
                 </SwiperSlide>
               ))
             : category.games.map((game) => (
-                <SwiperSlide key={game.id} className="min-w-56 flex-1 pt-2">
+                <SwiperSlide key={game.id} className="min-w-max flex-1 pt-2">
                   {/* Game Card */}
-                  <div
-                    className="relative rounded-2xl duration-200 ease-in-out hover:-translate-y-2 hover:shadow-md"
-                    onClick={() => handleClick()}
-                  >
-                    <div className="relative w-full cursor-pointer">
-                      {/* Game Image */}
-                      <Image
-                        src="/mock/game.png"
-                        alt={game.name}
-                        width={230}
-                        height={300}
-                        priority={true}
-                        className="border-stroke rounded-2xl border object-contain"
-                      />
-
-                      {/* Overlay */}
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent from-40% to-black to-90%"></div>
-                    </div>
-
-                    {/* Online Players */}
-                    {showOnline && (
-                      <div className="absolute bottom-4 left-4">
-                        <div className="flex items-center gap-2">
-                          <div className="size-2 rounded-full bg-green-500">
-                            <div className="size-2 animate-ping rounded-full bg-green-500"></div>
-                          </div>
-                          <p className="truncate text-sm text-white">
-                            {game.onlinePlayers.toLocaleString()} people playing
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Category */}
-                    {showCategory && (
-                      <div className="absolute top-4 left-4">
-                        <div className="rounded-2xl border border-white/20 bg-white/20 px-2.5 py-1.5 text-sm font-light text-white backdrop-blur-md">
-                          {game.category}
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <GameCard
+                    id={game.id}
+                    name={game.name}
+                    category={game.category}
+                    // image={game.image} // Placeholder image from placehold.co
+                    image="/mock/game.png" // Example with static image
+                    onlinePlayers={game.onlinePlayers}
+                    showOnline={showOnline}
+                    showCategory={showCategory}
+                  />
                 </SwiperSlide>
               ))}
         </div>

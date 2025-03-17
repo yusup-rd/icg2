@@ -35,7 +35,7 @@ export default async function RootLayout({
           <div className="flex h-full">
             <main className="flex h-full w-full flex-col">
               <Header />
-              <div className="flex flex-1 flex-col overflow-y-auto pb-14 md:pb-0">
+              <div className="flex flex-1 flex-col overflow-y-auto">
                 <div className="flex">
                   <div className="m-4 hidden md:block">
                     <Sidebar />
@@ -46,8 +46,8 @@ export default async function RootLayout({
                   <Footer />
                 </div>
               </div>
+              <MobileSidebar />
             </main>
-            <MobileSidebar />
           </div>
         </Providers>
       </body>

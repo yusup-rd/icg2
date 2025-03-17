@@ -5,10 +5,14 @@ import { categories } from "@/data/categoriesData";
 import Image from "next/image";
 import { LuPencilLine } from "react-icons/lu";
 import { TbLogout } from "react-icons/tb";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
 import CircleSkeleton from "../Skeleton/CircleSkeleton";
+import { FaChevronDown } from "react-icons/fa6";
 
 const Sidebar = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [openCategory, setOpenCategory] = useState<string | null>(null);
   const [imageLoaded, setImageLoaded] = useState<{ [key: string]: boolean }>(
     {},
@@ -54,22 +58,41 @@ const Sidebar = () => {
           {categories.map((category, index) => (
             <div key={index}>
               <button
-                className="hover:bg-primary/10 flex w-full cursor-pointer items-center gap-2.5 rounded-lg px-3 py-2 text-nowrap duration-200"
-                onClick={() => toggleSubmenu(category.name)}
+                className={`group flex w-full cursor-pointer items-center justify-between gap-2.5 rounded-lg px-3 py-2 text-nowrap duration-200 ${
+                  pathname.includes(category.href)
+                    ? "bg-primary text-white"
+                    : "hover:bg-primary/10"
+                }`}
+                onClick={() => router.replace(`/category/${category.href}`)}
               >
-                {!imageLoaded[`category-${index}`] && (
-                  <CircleSkeleton size={9} />
-                )}
-                <Image
-                  src={category.icon}
-                  alt={`Category ${category.name}`}
-                  width={35}
-                  height={35}
-                  priority
-                  className={`size-9 shrink-0 ${imageLoaded[`category-${index}`] ? "block" : "hidden"}`}
-                  onLoad={() => handleImageLoad(`category-${index}`)}
-                />
-                <p>{category.name}</p>
+                <div className="flex items-center gap-2.5">
+                  {!imageLoaded[`category-${index}`] && (
+                    <CircleSkeleton size={9} />
+                  )}
+                  <Image
+                    src={category.icon}
+                    alt={`Category ${category.name}`}
+                    width={35}
+                    height={35}
+                    priority
+                    className={`size-9 shrink-0 ${imageLoaded[`category-${index}`] ? "block" : "hidden"}`}
+                    onLoad={() => handleImageLoad(`category-${index}`)}
+                  />
+                  <p>{category.name}</p>
+                </div>
+                <div
+                  className={`${pathname.includes(category.href) ? "hover:bg-white/10" : "hover:bg-primary/10"} cursor-pointer rounded-full p-2 opacity-0 duration-200 group-hover:opacity-100 ${openCategory === category.name && "bg-primary/10 opacity-100"} ${openCategory === category.name && pathname.includes(category.href) && "bg-white/10"}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleSubmenu(category.name);
+                  }}
+                >
+                  {openCategory === category.name ? (
+                    <FaChevronDown className="rotate-180 duration-200" />
+                  ) : (
+                    <FaChevronDown className="rotate-0 duration-200" />
+                  )}
+                </div>
               </button>
 
               {/* Category Games Submenu */}
@@ -77,7 +100,7 @@ const Sidebar = () => {
                 <div className="mt-3 space-y-3">
                   {category.games.map((game, idx) => (
                     <Link
-                      href="#"
+                      href="/game/game-id"
                       key={idx}
                       className="hover:bg-primary/10 flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 duration-200"
                     >

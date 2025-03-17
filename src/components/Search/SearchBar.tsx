@@ -87,7 +87,7 @@ const SearchBar = ({ triggerType, onClose }: SearchBarProps) => {
               <button
                 type="button"
                 onClick={closeSearch}
-                className="hover:text-primary absolute top-1/2 right-3 -translate-y-1/2 transform text-gray-500"
+                className="hover:text-primary text-muted absolute top-1/2 right-3 -translate-y-1/2 transform"
               >
                 <FaXmark />
               </button>

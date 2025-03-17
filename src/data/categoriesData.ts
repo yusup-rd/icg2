@@ -83,7 +83,7 @@ export const categories = [
   {
     icon: "/categories/esports.svg",
     name: "E-Sports",
-    href: "/esports",
+    href: "/e-sports",
     games: [
       {
         image: "/games/queenOfBounty.svg",
