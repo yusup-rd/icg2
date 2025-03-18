@@ -6,7 +6,9 @@ import GameCard from "@/components/Card/GameCard";
 import { allCategories } from "@/data/mock/mockGamesData";
 import { MdVideogameAssetOff } from "react-icons/md";
 import CategoriesSidebar from "@/components/Layout/CategoriesSidebar";
-import GameDeveloperSection from "@/components/Sections/GameDeveloperSection";
+import GameGroupSelector from "@/components/Selectors/GameGroupSelector";
+
+// TODO: Add pagination for Desktop Devices and Lazy Loading for Mobile Devices
 
 const CategoryPage = ({
   params,
@@ -42,7 +44,7 @@ const CategoryPage = ({
 
       <div className="flex flex-col justify-between gap-3 xl:flex-row">
         {/* Game select by developer section */}
-        <GameDeveloperSection />
+        <GameGroupSelector />
 
         {/* Sidebar for mobile views as a dropdown */}
         <div className="md:hidden">

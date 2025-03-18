@@ -5,7 +5,7 @@ const DepositButton = () => {
   return (
     <div className="flex items-center">
       {/* Deposit amount display on xl>X size */}
-      <div className="bg-card border-stroke hidden max-w-40 items-center justify-center gap-3 rounded-lg rounded-r-none border-2 border-r-0 p-2 xl:flex">
+      <div className="bg-card border-stroke hidden max-w-44 items-center justify-center gap-3 rounded-lg rounded-r-none border-2 border-r-0 p-2 xl:flex">
         <FaMoneyBill className="text-muted size-5" />
         <span className="truncate">RM 10,000.00</span>
       </div>
