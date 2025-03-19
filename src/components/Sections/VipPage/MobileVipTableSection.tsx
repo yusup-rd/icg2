@@ -1,8 +1,12 @@
 import { vipData } from "@/data/vipData";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 
 const MobileVipTableSection = () => {
+  const t = useTranslations("VipPage.Table");
+  const tierT = useTranslations("VipPage.Tiers");
+
   const [openTiers, setOpenTiers] = useState<{ [key: string]: boolean }>({});
 
   const toggleCardOpen = (tier: string) => {
@@ -36,7 +40,7 @@ const MobileVipTableSection = () => {
                   backgroundImage: `linear-gradient(to right, ${tierData.textGradient[0]}, ${tierData.textGradient[1]})`,
                 }}
               >
-                {tierData.tier}
+                {tierT(tierData.tier)}
               </span>
               <Image
                 src={tierData.imageSrc}
@@ -49,48 +53,53 @@ const MobileVipTableSection = () => {
               />
             </div>
 
-            {/* Benefits Divider */}
-            <div className="flex items-center gap-6">
-              <div
-                className="h-1 w-full"
-                style={{
-                  backgroundImage: `linear-gradient(to top right, transparent 35%, ${tierData.headerGradient[0]})`,
-                }}
-              ></div>
+            {/* Visible Sections */}
+            {tierData.visibleSections.map((section, index) => (
+              <div key={index} className="space-y-5">
+                {/* Section Divider */}
+                <div className="flex items-center gap-6">
+                  <div
+                    className="h-1 w-full"
+                    style={{
+                      backgroundImage: `linear-gradient(to top right, transparent 35%, ${tierData.headerGradient[0]})`,
+                    }}
+                  ></div>
 
-              <span
-                className="text-nowrap"
-                style={{ color: tierData.textColor }}
-              >
-                Benefits
-              </span>
+                  <span
+                    className="text-nowrap"
+                    style={{ color: tierData.textColor }}
+                  >
+                    {t(section.title)}
+                  </span>
 
-              <div
-                className="h-1 w-full"
-                style={{
-                  backgroundImage: `linear-gradient(to top left, transparent 35%, ${tierData.headerGradient[0]})`,
-                }}
-              ></div>
-            </div>
-
-            {/* Benefits Grid */}
-            <div className="grid grid-cols-3 gap-3">
-              {tierData.benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="rounded-xl bg-white p-4 text-center"
-                >
-                  <p className="text-xl font-bold break-words text-[#212121]">
-                    {benefit.value}
-                  </p>
-                  <p className="text-xs text-[#757575]">{benefit.label}</p>
+                  <div
+                    className="h-1 w-full"
+                    style={{
+                      backgroundImage: `linear-gradient(to top left, transparent 35%, ${tierData.headerGradient[0]})`,
+                    }}
+                  ></div>
                 </div>
-              ))}
-            </div>
+
+                {/* Section Grid */}
+                <div className="grid grid-cols-3 gap-3">
+                  {section.items.map((item, itemIndex) => (
+                    <div
+                      key={itemIndex}
+                      className="rounded-xl bg-white p-4 text-center"
+                    >
+                      <p className="text-xl font-bold break-words text-[#212121]">
+                        {t(item.value)}
+                      </p>
+                      <p className="text-xs text-[#757575]">{t(item.label)}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
 
             {/* Expandable Sections */}
             {isOpen &&
-              tierData.extraSections.map((section, index) => (
+              tierData.hiddenSections.map((section, index) => (
                 <div key={index} className="space-y-5">
                   {/* Section Divider */}
                   <div className="flex items-center gap-6">
@@ -105,7 +114,7 @@ const MobileVipTableSection = () => {
                       className="text-nowrap"
                       style={{ color: tierData.textColor }}
                     >
-                      {section.title}
+                      {t(section.title)}
                     </span>
 
                     <div
@@ -124,9 +133,11 @@ const MobileVipTableSection = () => {
                         className="rounded-xl bg-white p-4 text-center"
                       >
                         <p className="text-xl font-bold break-words text-[#212121]">
-                          {item.value}
+                          {t(item.value)}
                         </p>
-                        <p className="text-xs text-[#757575]">{item.label}</p>
+                        <p className="text-xs text-[#757575]">
+                          {t(item.label)}
+                        </p>
                       </div>
                     ))}
                   </div>

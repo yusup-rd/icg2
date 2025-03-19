@@ -7,5 +7,148 @@
     "message": "404 - Page Not Found",
     "description": "Sorry, the page you're looking for doesn't exist.",
     "link": "Go Back Home"
+  },
+  "VipPage": {
+    "label": "FAFA878 VIP CLUB",
+    "description": "Unlock exclusive benefits and rewards with our tiered VIP membership program.",
+    "Tiers": {
+      "bronze": "Bronze",
+      "silver": "Silver",
+      "gold": "Gold",
+      "platinum": "Platinum",
+      "black": "Black"
+    },
+    "Table": {
+      "vipBenefits": "VIP Benefits",
+      "dailyCashRebate": "Daily Cash Rebate",
+      "levelUpRequirements": "Level Up Requirements",
+      "monthlyTierRetention": "Monthly Tier Retention",
+
+      "UpgradeBonus": {
+        "label": "Upgrade Bonus",
+        "bronze": "128",
+        "silver": "288",
+        "gold": "688",
+        "platinum": "1,288",
+        "black": "1,888"
+      },
+
+      "DailyWithdrawAmount": {
+        "label": "Daily Withdraw Amount",
+        "bronze": "30,000",
+        "silver": "50,000",
+        "gold": "150,000",
+        "platinum": "Unlimited",
+        "black": "Unlimited"
+      },
+
+      "DailyWithdrawLimit": {
+        "label": "Daily withdraw limit",
+        "bronze": "5",
+        "silver": "10",
+        "gold": "20",
+        "platinum": "Unlimited",
+        "black": "Unlimited"
+      },
+
+      "BirthdayBonus": {
+        "label": "Birthday Bonus",
+        "bronze": "188",
+        "silver": "388",
+        "gold": "588",
+        "platinum": "888",
+        "black": "2,888"
+      },
+
+      "WeeklyRescueBonus": {
+        "label": "Weekly Rescue Bonus",
+        "bronze": "888",
+        "silver": "1,888",
+        "gold": "2,888",
+        "platinum": "3,888",
+        "black": "6,888"
+      },
+
+      "ReferralFriend": {
+        "label": "Referral Friend",
+        "bronze": "Yes",
+        "silver": "Yes",
+        "gold": "Yes",
+        "platinum": "Yes",
+        "black": "Yes"
+      },
+
+      "FestivalCash": {
+        "label": "Festival Cash",
+        "bronze": "50",
+        "silver": "75",
+        "gold": "100",
+        "platinum": "300",
+        "black": "500"
+      },
+
+      "SpecialBirthdayGift": {
+        "label": "Special Birthday Gift",
+        "bronze": "Yes",
+        "silver": "Yes",
+        "gold": "Yes",
+        "platinum": "Yes",
+        "black": "Yes"
+      },
+
+      "Esports": {
+        "label": "E-Sports",
+        "bronze": "0.50%",
+        "silver": "0.60%",
+        "gold": "0.70%",
+        "platinum": "0.80%",
+        "black": "1%"
+      },
+
+      "LiveCasino": {
+        "label": "Live Casino",
+        "bronze": "0.40%",
+        "silver": "0.50%",
+        "gold": "0.65%",
+        "platinum": "0.80%",
+        "black": "1%"
+      },
+
+      "Slot": {
+        "label": "Slot",
+        "bronze": "0.50%",
+        "silver": "0.60%",
+        "gold": "0.70%",
+        "platinum": "0.85%",
+        "black": "1%"
+      },
+
+      "Sportsbook": {
+        "label": "Sportsbook",
+        "bronze": "0.50%",
+        "silver": "0.60%",
+        "gold": "0.70%",
+        "platinum": "0.80%",
+        "black": "1%"
+      },
+
+      "AccumulatedDeposit": {
+        "label": "Accumulated Deposit (Monthly)",
+        "bronze": "30,000",
+        "silver": "100,000",
+        "gold": "200,000",
+        "platinum": "500,000",
+        "black": "By Invitation"
+      },
+
+      "MembershipRenewal": {
+        "label": "Membership Renewal",
+        "bronze": "2 Months",
+        "silver": "2 Months",
+        "gold": "Lifetime",
+        "platinum": "Lifetime",
+        "black": "Lifetime"
+      }
+    }
   }
 }

@@ -29,7 +29,7 @@ const TermsDropdown = () => {
   ];
 
   return (
-    <div className="bg-secondary w-full rounded-2xl p-4">
+    <div className="bg-card w-full rounded-2xl p-4">
       {/* Header */}
       <div
         className="flex items-center justify-between gap-3"

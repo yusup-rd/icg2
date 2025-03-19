@@ -7,5 +7,148 @@
     "message": "404 - 页面未找到",
     "description": "抱歉，您正在查找的页面不存在。",
     "link": "返回首页"
+  },
+  "VipPage": {
+    "label": "FAFA878 VIP 俱乐部",
+    "description": "通过我们的分级 VIP 会员计划，解锁专属福利和奖励。",
+    "Tiers": {
+      "bronze": "青铜",
+      "silver": "白银",
+      "gold": "黄金",
+      "platinum": "铂金",
+      "black": "黑钻"
+    },
+    "Table": {
+      "vipBenefits": "VIP 福利",
+      "dailyCashRebate": "每日现金回扣",
+      "levelUpRequirements": "升级要求",
+      "monthlyTierRetention": "每月等级保留",
+
+      "UpgradeBonus": {
+        "label": "升级奖金",
+        "bronze": "128",
+        "silver": "288",
+        "gold": "688",
+        "platinum": "1,288",
+        "black": "1,888"
+      },
+
+      "DailyWithdrawAmount": {
+        "label": "每日提现额度",
+        "bronze": "30,000",
+        "silver": "50,000",
+        "gold": "150,000",
+        "platinum": "无限制",
+        "black": "无限制"
+      },
+
+      "DailyWithdrawLimit": {
+        "label": "每日提现次数",
+        "bronze": "5",
+        "silver": "10",
+        "gold": "20",
+        "platinum": "无限制",
+        "black": "无限制"
+      },
+
+      "BirthdayBonus": {
+        "label": "生日奖金",
+        "bronze": "188",
+        "silver": "388",
+        "gold": "588",
+        "platinum": "888",
+        "black": "2,888"
+      },
+
+      "WeeklyRescueBonus": {
+        "label": "每周救济金",
+        "bronze": "888",
+        "silver": "1,888",
+        "gold": "2,888",
+        "platinum": "3,888",
+        "black": "6,888"
+      },
+
+      "ReferralFriend": {
+        "label": "推荐好友",
+        "bronze": "是",
+        "silver": "是",
+        "gold": "是",
+        "platinum": "是",
+        "black": "是"
+      },
+
+      "FestivalCash": {
+        "label": "节日现金",
+        "bronze": "50",
+        "silver": "75",
+        "gold": "100",
+        "platinum": "300",
+        "black": "500"
+      },
+
+      "SpecialBirthdayGift": {
+        "label": "特别生日礼物",
+        "bronze": "是",
+        "silver": "是",
+        "gold": "是",
+        "platinum": "是",
+        "black": "是"
+      },
+
+      "Esports": {
+        "label": "电子竞技",
+        "bronze": "0.50%",
+        "silver": "0.60%",
+        "gold": "0.70%",
+        "platinum": "0.80%",
+        "black": "1%"
+      },
+
+      "LiveCasino": {
+        "label": "真人娱乐场",
+        "bronze": "0.40%",
+        "silver": "0.50%",
+        "gold": "0.65%",
+        "platinum": "0.80%",
+        "black": "1%"
+      },
+
+      "Slot": {
+        "label": "老虎机",
+        "bronze": "0.50%",
+        "silver": "0.60%",
+        "gold": "0.70%",
+        "platinum": "0.85%",
+        "black": "1%"
+      },
+
+      "Sportsbook": {
+        "label": "体育博彩",
+        "bronze": "0.50%",
+        "silver": "0.60%",
+        "gold": "0.70%",
+        "platinum": "0.80%",
+        "black": "1%"
+      },
+
+      "AccumulatedDeposit": {
+        "label": "累积存款（月）",
+        "bronze": "30,000",
+        "silver": "100,000",
+        "gold": "200,000",
+        "platinum": "500,000",
+        "black": "仅限邀请"
+      },
+
+      "MembershipRenewal": {
+        "label": "会员续期",
+        "bronze": "2 个月",
+        "silver": "2 个月",
+        "gold": "终身",
+        "platinum": "终身",
+        "black": "终身"
+      }
+    }
   }
 }

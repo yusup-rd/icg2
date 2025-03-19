@@ -13,7 +13,11 @@ const SearchResults = ({ query }: { query: string }) => {
   return (
     <div className="bg-card ring-stroke z-20 mt-4 w-full rounded-lg p-1 ring-2 md:absolute md:p-0">
       <div className="m-3 md:m-5">
-        {mockResultGames.length > 0 ? (
+        {query && query.length < 3 ? (
+          <p className="text-muted text-center text-sm">
+            Enter at least 3 characters.
+          </p>
+        ) : mockResultGames.length > 0 ? (
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8">
             {mockResultGames.map((game) => (
               <div key={game.id} className="w-full">
