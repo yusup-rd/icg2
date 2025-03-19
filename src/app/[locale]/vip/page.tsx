@@ -1,7 +1,9 @@
 "use client";
 
-import MobileVipTableSection from "@/components/Sections/MobileVipTableSection";
+import TermsDropdown from "@/components/Dropdowns/TermsDropdown";
+import MobileVipTableSection from "@/components/Sections/VipPage/MobileVipTableSection";
 import TierListImagesSection from "@/components/Sections/TierListImagesSection";
+import VipTableSection from "@/components/Sections/VipPage/VipTableSection";
 
 const VipPage = () => {
   return (
@@ -18,7 +20,14 @@ const VipPage = () => {
         </p>
       </div>
 
-      <MobileVipTableSection />
+      <div className="space-y-8 md:hidden">
+        <MobileVipTableSection />
+        <TermsDropdown />
+      </div>
+
+      <div className="hidden md:block">
+        <VipTableSection />
+      </div>
     </div>
   );
 };

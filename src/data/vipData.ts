@@ -196,3 +196,172 @@ export const vipData = [
     ],
   },
 ];
+
+export const benefitsTable = {
+  label: "VIP Benefits",
+  data: [
+    {
+      benefit: "Upgrade Bonus",
+      bronze: "128",
+      silver: "288",
+      gold: "688",
+      platinum: "1,288",
+      black: "1,888",
+    },
+    {
+      benefit: "Daily withdraw amount",
+      bronze: "30,000",
+      silver: "50,000",
+      gold: "150,000",
+      platinum: "Unlimited",
+      black: "Unlimited",
+    },
+    {
+      benefit: "Daily withdraw limit",
+      bronze: "5",
+      silver: "10",
+      gold: "20",
+      platinum: "Unlimited",
+      black: "Unlimited",
+    },
+    {
+      benefit: "Birthday Bonus",
+      bronze: "188",
+      silver: "388",
+      gold: "588",
+      platinum: "888",
+      black: "2,888",
+    },
+    {
+      benefit: "Weekly Rescue Bonus",
+      bronze: "888",
+      silver: "1,888",
+      gold: "2,888",
+      platinum: "3,888",
+      black: "6,888",
+    },
+    {
+      benefit: "Referral Friend",
+      bronze: "Yes",
+      silver: "Yes",
+      gold: "Yes",
+      platinum: "Yes",
+      black: "Yes",
+    },
+    {
+      benefit: "Festival Cash",
+      bronze: "50",
+      silver: "75",
+      gold: "100",
+      platinum: "300",
+      black: "500",
+    },
+    {
+      benefit: "Special Birthday Gift",
+      bronze: "Yes",
+      silver: "Yes",
+      gold: "Yes",
+      platinum: "Yes",
+      black: "Yes",
+    },
+  ],
+};
+
+export const dailyCashRebateTable = {
+  label: "Daily Cash Rebate",
+  data: [
+    {
+      benefit: "Esports",
+      bronze: "0.50%",
+      silver: "0.60%",
+      gold: "0.70%",
+      platinum: "0.80%",
+      black: "1%",
+    },
+    {
+      benefit: "Live Casino",
+      bronze: "0.40%",
+      silver: "0.50%",
+      gold: "0.65%",
+      platinum: "0.80%",
+      black: "1%",
+    },
+    {
+      benefit: "Slot",
+      bronze: "0.50%",
+      silver: "0.60%",
+      gold: "0.70%",
+      platinum: "0.85%",
+      black: "1%",
+    },
+    {
+      benefit: "Sportsbook",
+      bronze: "0.50%",
+      silver: "0.60%",
+      gold: "0.70%",
+      platinum: "0.80%",
+      black: "1%",
+    },
+  ],
+};
+
+export const levelUpRequirementsTable = {
+  label: "Level Up Requirements",
+  data: [
+    {
+      benefit: "Accumulated Deposit (Monthly)",
+      bronze: "30,000",
+      silver: "100,000",
+      gold: "200,000",
+      platinum: "500,000",
+      black: "By Invitation",
+    },
+  ],
+};
+
+export const monthlyTierRetentionTable = {
+  label: "Monthly Tier Retention",
+  data: [
+    {
+      benefit: "Membership Renewal",
+      bronze: "2 Months",
+      silver: "2 Months",
+      gold: "Lifetime",
+      platinum: "Lifetime",
+      black: "Lifetime",
+    },
+  ],
+};
+
+export function getTierBgColor(tier: string) {
+  const colors: { [key: string]: string } = {
+    Bronze: "#FFEFE4",
+    Silver: "#F5F5F5",
+    Gold: "#FFF6E3",
+    Platinum: "#F1EFFF",
+    Black: "#D9C9C9",
+  };
+  return colors[tier];
+}
+
+export function getTierTextColor(tier: string) {
+  const colors: { [key: string]: string } = {
+    Bronze: "#542D20",
+    Silver: "#051144",
+    Gold: "#443405",
+    Platinum: "#3C0544",
+    Black: "#7F2D2D",
+  };
+  return colors[tier];
+}
+
+export function getTierImageSrc(tier: string) {
+  const images: { [key: string]: string } = {
+    Bronze: "bronze.svg",
+    Silver: "silver.svg",
+    Gold: "gold.svg",
+    Platinum: "platinum.svg",
+    Black: "dark.svg",
+  };
+  return images[tier];
+}

@@ -2,8 +2,6 @@ import { vipData } from "@/data/vipData";
 import Image from "next/image";
 import { useState } from "react";
 
-// TODO: Refactor this code. Keep information about all the tier benefits in data ts file. Dynamically render content on this page. Complete Desktop view of the tables.
-
 const MobileVipTableSection = () => {
   const [openTiers, setOpenTiers] = useState<{ [key: string]: boolean }>({});
 
@@ -82,7 +80,7 @@ const MobileVipTableSection = () => {
                   key={index}
                   className="rounded-xl bg-white p-4 text-center"
                 >
-                  <p className="text-xl font-bold break-words">
+                  <p className="text-xl font-bold break-words text-[#212121]">
                     {benefit.value}
                   </p>
                   <p className="text-xs text-[#757575]">{benefit.label}</p>
@@ -125,7 +123,7 @@ const MobileVipTableSection = () => {
                         key={itemIndex}
                         className="rounded-xl bg-white p-4 text-center"
                       >
-                        <p className="text-xl font-bold break-words">
+                        <p className="text-xl font-bold break-words text-[#212121]">
                           {item.value}
                         </p>
                         <p className="text-xs text-[#757575]">{item.label}</p>
@@ -137,7 +135,7 @@ const MobileVipTableSection = () => {
 
             {/* Toggle Button */}
             <button
-              className="w-full rounded-xl bg-white p-4 text-sm font-bold duration-200 hover:scale-95"
+              className="w-full rounded-xl bg-white p-4 text-sm font-bold text-[#212121] duration-200 hover:scale-95"
               onClick={() => toggleCardOpen(tierData.tier)}
             >
               {isOpen ? "View Less" : "View More"}
